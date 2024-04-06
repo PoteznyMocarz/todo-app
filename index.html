@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="output.css">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/bg-mobile-dark.jpg">
+  <link rel="preload" as="image" href="/images/bg-desktop-dark.jpg">
+  <link rel="preload" as="image" href="/images/bg-desktop-light.jpg">
+  <link rel="preload" as="image" href="/images/bg-mobile-light.jpg">
+  <link rel="preload" as="image" href="/images/icon-sun.svg">
+  <link rel="preload" as="image" href="/images/icon-moon.svg">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body class="bg-bgColor min-h-screen flex px-[24px] pb-[120px] font-JosefinSans dark transition-all">
+  <img id="mainImgMob" class="absolute w-screen h-[27%] top-0 left-0 z-[-1] md:hidden" src="/images/bg-mobile-dark.jpg" alt="">
+  <img id="mainImgDesk" class="absolute w-screen h-[35%] top-0 left-0 z-[-1] hidden md:inline" src="/images/bg-desktop-dark.jpg" alt="">
+  <main class="flex flex-col gap-5 md:gap-6 w-[540px] relative top-[75px] left-[50%] translate-x-[-50%] h-fit">
+    <div class="flex justify-between uppercase text-white text-[30px] font-[650] tracking-[14px]">
+      <span class="md:text-[40px]">Todo</span>
+      <img id="modeBtn" class="object-none cursor-pointer h-fit mt-3" src="/images/icon-sun.svg" alt="">
+    </div>
+    <div class="flex h-fit items-center gap-3 bg-mainColor py-3 px-6 md:py-4 rounded-[5px]">
+      <div id="submitBtn" class="h-[27px] w-[32px] rounded-[50%] border-[1px] border-circleBorderColor hover:border-[#67039d] cursor-pointer"></div>
+      <input id="inputMain" class="w-full bg-transparent text-[16px] md:text-[18px] text-inputColor placeholder:text-placeholderColor font-[400] mt-1 outline-none" type="text" placeholder="Create a new todo..." autocomplete="off">
+    </div>
+
+    <div>
+      <ul id="listContainer" class="bg-mainColor rounded-t-[5px]">
+        <li class="li-class checked group">
+          Complete online JavaScript course 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+        <li class="li-class group">
+          Jog around the park 3x 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+        <li class="li-class group">
+          10 minutes meditation 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+        <li class="li-class group">
+          Read for 1 hour 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+        <li class="li-class group">
+          Pick up groceries 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+        <li class="li-class group">
+          Complete Todo App on Fronted Mentor 
+          <img class="img-class" src="/images/icon-cross.svg" alt="">
+        </li>
+      </ul>
+      <div class="flex justify-between py-[18px] px-6 text-filterColor bg-mainColor rounded-b-[5px]">
+        <span id="itemsLeftSpan">5 items left</span>
+        <div class="rounded-[5px] px-6 justify-center gap-4 text-[16px] text-filterColor font-[700] hidden md:flex">
+          <span id="showAllDesk" class="active hover:text-filterHoverColor cursor-pointer filter-btn transition-all">All</span>
+          <span id="showActiveDesk" class="hover:text-filterHoverColor cursor-pointer filter-btn transition-all">Active</span> 
+          <span id="showCompletedDesk" class="hover:text-filterHoverColor cursor-pointer filter-btn transition-all">Completed</span>
+        </div>
+        <span id="clearCompletedBtn" class="hover:text-filterHoverColor cursor-pointer transition-all">Clear Completed</span>
+      </div>
+  </div>
+
+    <div class="bg-mainColor rounded-[5px] py-[15px] px-6 flex justify-center gap-4 text-[17px] text-filterColor font-[700] md:hidden">
+      <span id="showAllMob" class="active hover:text-filterHoverColor cursor-pointer filter-btn">All</span>
+      <span id="showActiveMob" class="hover:text-filterHoverColor cursor-pointer filter-btn">Active</span> 
+      <span id="showCompletedMob" class="hover:text-filterHoverColor cursor-pointer filter-btn">Completed</span>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
